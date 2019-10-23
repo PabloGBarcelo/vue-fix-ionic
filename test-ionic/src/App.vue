@@ -1,19 +1,22 @@
 <template>
   <ion-app>
-    <ion-menu-controller content-id="main-content"></ion-menu-controller>
+    <ion-menu-controller></ion-menu-controller>
 
-    <ion-split-pane id="main-content">
+    <ion-split-pane content-id="main-content">
       <ion-menu class="menuOptions" type="overlay" side="start" content-id="main-content">
-        <ion-content class="fullWidth" padding>
+        <ion-content class="fullHeight" padding>
           <button @click="close">close</button>
         </ion-content>
         <div>footer</div>
       </ion-menu>
+
+      <div id="main-content">
+        <div>
+          <ion-button @click="openStart">Open Menu</ion-button>
+        </div>
+        <list-component></list-component>
+      </div>
     </ion-split-pane>
-    <div>
-      <ion-button @click="openStart">Open Menu</ion-button>
-    </div>
-    <list-component></list-component>
   </ion-app>
 </template>
 
@@ -46,7 +49,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.fullWidth {
+.fullHeight {
   height: 100vh;
+}
+
+.menu-content {
+  width: 100%;
 }
 </style>
