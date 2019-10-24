@@ -1,15 +1,17 @@
 <template>
   <ion-app>
+  <!-- Ion Menu Controller * Out of ion-split-pane -->
     <ion-menu-controller></ion-menu-controller>
 
     <ion-split-pane content-id="main-content">
+    <!-- Ion Menu // Out of main app -->
       <ion-menu class="menuOptions" type="overlay" side="start" content-id="main-content">
         <ion-content class="fullHeight" padding>
           <button @click="close">close</button>
         </ion-content>
         <div>footer</div>
       </ion-menu>
-
+      <!-- Main app -->
       <div id="main-content">
         <div>
           <ion-button @click="openStart">Open Menu</ion-button>
